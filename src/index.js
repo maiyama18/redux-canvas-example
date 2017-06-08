@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import { createStore } from 'redux'
 import { Form, Canvas } from './components'
 
-const initialState = {text: ''}
+const initialState = {text: 'start'}
 const reducer = (state = initialState, action) => {
     switch (action.type) {
         case 'CHANGE_TEXT':

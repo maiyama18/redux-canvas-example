@@ -23,6 +23,9 @@ export class Canvas extends Component {
     this.ctx = this.refs.canvas.getContext('2d')
     this.ctx.textAlign = 'center'
     this.ctx.font = '24px sans-serif'
+
+    const { text } = this.props.store.getState()
+    this.ctx.fillText(text, canvasWidth / 2, canvasHeight / 2)
   }
   shouldComponentUpdate() {
     const { text } = this.props.store.getState()

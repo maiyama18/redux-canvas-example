@@ -24,11 +24,13 @@ export class Canvas extends Component {
     this.ctx.textAlign = 'center'
     this.ctx.font = '24px sans-serif'
   }
-  componentDidUpdate() {
+  shouldComponentUpdate() {
     const { text } = this.props.store.getState()
 
     this.ctx.clearRect(0, 0, canvasWidth, canvasHeight)
     this.ctx.fillText(text, canvasWidth / 2, canvasHeight / 2)
+
+    return false
   }
 
   render() {
